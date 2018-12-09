@@ -1,0 +1,24 @@
+import PropTypes from 'prop-types';
+
+// Klasse
+class User extends React.Component {
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string, // optional
+    interests: PropTypes.array.isRequired
+  };
+
+  render() {
+    return <span>{this.props.name}</span>;
+  }
+}
+
+// Funksjon
+const User = props =>
+  <span>{this.props.name}</span>;
+
+User.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string, // optional
+  interests: PropTypes.array.isRequired
+};            

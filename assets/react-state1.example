@@ -1,0 +1,25 @@
+// Constructor
+class MyComponent extends React.Component {
+  constructor(props){
+    super(props);
+    
+    this.state = {
+      name: 'My name'
+    };
+  }
+
+  render(){
+    return <span>My name is: {this.state.name}</span>;
+  }
+}
+
+// Class fields
+class MyComponent extends React.Component {
+  state = {
+    name: 'My name'
+  };
+
+  render(){
+    return <span>My name is: {this.state.name}</span>;
+  }
+}

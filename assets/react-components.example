@@ -1,0 +1,23 @@
+
+// Klassekomponent
+
+class MyComponent extends React.Component {
+  render(){
+    return <span>En komponent</span>;
+  }
+}
+
+// Funksjonskomponenter
+
+function MyComponent(){
+  return <span>En komponent</span>;
+}
+
+const MyComponent = function(){
+  return <span>En komponent</span>;
+}
+
+const MyComponent = () =>
+  <span>En komponent</span>;
+
+

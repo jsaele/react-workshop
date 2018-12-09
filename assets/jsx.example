@@ -1,0 +1,27 @@
+// Html tag'er man er vandt til
+<div>
+  <p>Nyttig tekst</p>
+  <ul>        
+    <li>List item</li>
+  </ul>
+</div>
+
+// Attributter
+<span className="very-stylish" id="1">Id 1 styled</span>
+
+// Med React komponenter
+<div>
+  <p>Noe HTML</p>
+  <MyReactComponent />
+</div>
+
+// Med JavaScript
+<span>1 + 1 = {1 + 1}</span>
+
+// Mange React komponenter, med og uten barn
+<Page>
+  <Header title="Page 1" />
+  <MainContent>
+    <p>Page one content</p>
+  </MainContent>
+</Page>

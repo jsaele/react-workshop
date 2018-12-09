@@ -1,0 +1,16 @@
+// Klassekomponent med props
+
+class NameDisplayer extends React.Component {
+  constructor(props){
+    super(props); // Må instansiere React.Component
+  }
+
+  render(){
+    return <span>My name is: {this.props.name}</span>;
+  }
+}
+
+// Funksjonskomponent
+
+const NameDisplayer = props =>
+  <span>My name is: {props.name}</span>;
