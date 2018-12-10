@@ -16,7 +16,8 @@ import {
   Markdown,
   Code,
   CodePane,
-  Link
+  Link,
+  Image
 } from "spectacle";
 
 // Import theme
@@ -24,6 +25,8 @@ import createTheme from "spectacle/lib/themes/default";
 
 // Require CSS
 require("normalize.css");
+
+import todoImg from '../assets/todos.png';
 
 const theme = createTheme({
   primary: "white",
@@ -58,6 +61,13 @@ const HeadingLarge = ({children, ...props}) =>
 
 const CodeSmall = ({children, ...props}) =>
       <Code style={{fontSize: "2rem"}} {...props}>{children}</Code>;
+
+const StupidListItem = () => (
+  <ListItem textSize="2.2rem">
+    <CodeSmall>{'<div>'}</CodeSmall>'en skal ha 2 barn, 2 <CodeSmall>{'<input>'}</CodeSmall> tag'er.
+    Første skal være <CodeSmall>type="checkbox"</CodeSmall>, den andre <CodeSmall>type="text"</CodeSmall>
+    </ListItem>
+);
 
 export default class Presentation extends React.Component {
   render() {
@@ -169,6 +179,7 @@ export default class Presentation extends React.Component {
           <Notes>
             <h4>Notes</h4>
             <ol>
+              <li>utvidelse, skrive jsx, blir til javascript</li>
               <li>hvordan ser det ut?</li>
             </ol>
           </Notes>
@@ -235,6 +246,7 @@ export default class Presentation extends React.Component {
           <Notes>
             <h4>Notes</h4>
             <ol>
+              <li>alt man spesifiserer etter komponentnanvn er props</li>
               <li>React eier props. Ødelegger React sin state ved å endre</li>
             </ol>
           </Notes>
@@ -289,7 +301,96 @@ export default class Presentation extends React.Component {
             <ListItem textSize="2.2rem">Lag PropTypes for komponten. Bonus: Åpne console'n og se at man får error log når prop ikke er tilstede</ListItem>
           </List>
         </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <HeadingLarge>La oss lage noe</HeadingLarge>
+          <br/>
+          <HeadingMedium size={5} textColor="primary">Hva med en liste med todos? Det er vel ganske originalt?</HeadingMedium>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <HeadingLarge>Todo app</HeadingLarge>
+          <HeadingSmall textColor="primary">Features</HeadingSmall>
+          <br />
+          <List ordered textSize="1rem" textAlign="center">
+            <ListItem textSize="2.2rem">List todos</ListItem>
+            <br />
+            <ListItem textSize="2.2rem">Add todos</ListItem>
+            <br />
+            <ListItem textSize="2.2rem">Complete todos</ListItem>
+            <br />
+          </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <HeadingMedium textColor="tertiary">Resultat</HeadingMedium>
+          <Image src={todoImg}/>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <HeadingMedium textColor="tertiary">Initiell app</HeadingMedium>
+          <CodePane margin="20px auto" style={{fontSize: "1.2rem"}} lang="javascript" source={require('raw-loader!../assets/todo-initial.example')} />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <HeadingMedium textColor="secondary">Oppgaverunde</HeadingMedium>
+          <br/>
+          <HeadingSmall textColor="secondary">2 komponenter: TodoList og Todo</HeadingSmall>
+          <List ordered textSize="1rem" textAlign="center">
+            <ListItem textSize="2.2rem">Lag en TodoList komponent. Denne skal returnere en <CodeSmall>{'<ul></ul>'}</CodeSmall></ListItem>
+            <br />
+            <ListItem textSize="2.2rem">Lag en Todo komponent. Denne skal returnere en <CodeSmall>{'<li>My todo</li>'}</CodeSmall></ListItem>
+            <br />
+            <ListItem textSize="2.2rem">Ta i bruk Todo komponenten i TodoList komponenten</ListItem>
+            <br />
+            <ListItem textSize="2.2rem">Ta i bruk TodoList komponenten i App komponenten, under <CodeSmall>{'<h1></h1>'}</CodeSmall> tag'en'</ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <HeadingMedium textColor="secondary">Oppgaverunde!</HeadingMedium>
+          <br/>
+          <List ordered textSize="1rem" textAlign="center">
+            <ListItem textSize="2.2rem">Refaktorer <CodeSmall>{'<Todo />'}</CodeSmall> til å returnere en <CodeSmall>{'<div>'}</CodeSmall> inne i <CodeSmall>{'<li>'}</CodeSmall> tag'en. Husk å lukke tag'ene.</ListItem>
+            <br />
+            <StupidListItem />
+            <br />
+            <ListItem textSize="2.2rem">Tekstfeltet skal returnere 'My todo'. Hint: value attributt</ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <HeadingLarge textColor="secondary">En todo vi ikke kan endre</HeadingLarge>
+          <br/>
+          <HeadingMedium>Hva nå? More refactoring!</HeadingMedium>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <HeadingLarge textColor="secondary">Tilpasninger for å gjøre endringer</HeadingLarge>
+          <br/>
+          <HeadingMedium>Bruke konsepter vi har lært tidligere</HeadingMedium>
+          <HeadingMedium></HeadingMedium>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <HeadingMedium textColor="secondary">Oppgaverunde!!</HeadingMedium>
+          <br/>
+          <TextSmall>State og props</TextSmall>
+          <List ordered textSize="1rem" textAlign="center">
+            <ListItem textSize="2.2rem"><CodeSmall>{'<TodoList />'}</CodeSmall> må gjøres om til klassekomponent hvis den ikke er det</ListItem>
+            <br />
+            <ListItem textSize="2.2rem">Lag initiell state via class fields. Skal være et objekt med en property <CodeSmall>todo</CodeSmall></ListItem>
+            <br />
+            <ListItem textSize="2.2rem"><CodeSmall>todo</CodeSmall> skal være et slikt objekt:<br/> <CodeSmall>{"{ id: 1, title: 'My todo', complete: false }"}</CodeSmall></ListItem>
+            <br />
+            <ListItem textSize="2.2rem"><CodeSmall>{'<Todo />'}</CodeSmall> sine props skal bestå av en <CodeSmall>todo</CodeSmall>. Bytt ut hardkodet todo tittel med verdi fra <CodeSmall>props</CodeSmall></ListItem>
+          </List>
+          <br />
+          <TextSmall textSize="1.7rem">Hint: husk {'{ }'} for å sende inn JavaScript verdier på props</TextSmall>
+        </Slide>
       </Deck>
     );
   }
 }
+// TODO: Sammenligne react med nokke anna?
+// TODO: Backup concepts

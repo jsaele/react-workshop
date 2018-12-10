@@ -1,5 +1,5 @@
-class HelloWorld extends React.Component {
+class HelloITS extends React.Component {
   render() {
-    return <span>Hello world</span>;
+    return <span>Hello ITS</span>;
   }
 }
