@@ -60,7 +60,7 @@ const HeadingLarge = ({children, ...props}) =>
       <Heading size={1} fit caps lineHeight={1} {...props}>{children}</Heading>;
 
 const CodeSmall = ({children, ...props}) =>
-      <Code style={{fontSize: "2rem"}} {...props}>{children}</Code>;
+      <Code textSize="2rem" {...props}>{children}</Code>;
 
 const StupidListItem = () => (
   <ListItem textSize="2.2rem">
@@ -81,14 +81,7 @@ export default class Presentation extends React.Component {
         <Slide textAlign="right" transition={["fade"]} bgColor="tertiary">
           <HeadingMedium>Hvordan følge dagens workshop</HeadingMedium>
           <br/>
-          <HeadingSmallLeft>Uten oppsett:</HeadingSmallLeft>
-          <TextSmallLeft><Link href="https://codesandbox.io" target="_blank">https://codesandbox.io</Link></TextSmallLeft>
-          <br/>
-          <HeadingSmallLeft>Kjøre lokalt:</HeadingSmallLeft>
-          <TextSmallLeft>Installer <CodeSmall>nodejs</CodeSmall>. Fås på: <Link href="https://nodejs.org" target="_blank">https://nodejs.org</Link></TextSmallLeft>
-          <br/>
-          <TextSmallLeft>Så kjør i en terminal:</TextSmallLeft>
-          <CodePane margin="20px auto" style={{fontSize: "1.2rem"}} lang="javascript" source={require('raw-loader!../assets/nodejs-install.example')}/>
+          <HeadingMedium><Link href="https://codesandbox.io" target="_blank">https://codesandbox.io</Link></HeadingMedium>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="tertiary">
@@ -140,6 +133,7 @@ export default class Presentation extends React.Component {
             <ListItem>Komponentbasert</ListItem>
             <ListItem>Kan skrives i JavaScript/TypeScript/Flow ++</ListItem>
             <ListItem>Ikke et rammeverk</ListItem>
+            <ListItem>V i MVC</ListItem>
           </List>
         </Slide>
 
@@ -172,7 +166,7 @@ export default class Presentation extends React.Component {
               <li>javascript rundt, jsx inni. ingen '' rundt html'en</li>
             </ol>
           </Notes>
-          <CodePane margin="20px auto" style={{fontSize: "1.2rem"}} lang="javascript" source={require('raw-loader!../assets/react-helloworld.example')}/>
+          <CodePane margin="20px auto" style={{fontSize: "2rem"}} lang="javascript" source={require('raw-loader!../assets/react-helloworld.example')}/>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
@@ -192,7 +186,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
-          <CodePane margin="20px auto" style={{fontSize: "1.2rem"}} lang="javascript" source={require('raw-loader!../assets/jsx.example')} />
+          <CodePane margin="20px auto" style={{fontSize: "1.4rem"}} lang="javascript" source={require('raw-loader!../assets/jsx.example')} />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
@@ -210,7 +204,7 @@ export default class Presentation extends React.Component {
               <li>javascript syntaks tillater flere måter, es5 6 etc</li>
             </ol>
           </Notes>
-          <CodePane margin="20px auto" style={{fontSize: "1.2rem"}} lang="javascript" source={require('raw-loader!../assets/react-components.example')} />
+          <CodePane margin="20px auto" style={{fontSize: "1.6rem"}} lang="javascript" source={require('raw-loader!../assets/react-components.example')} />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -226,7 +220,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <HeadingLarge>State</HeadingLarge>
+          <HeadingLarge>React Component State</HeadingLarge>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -236,10 +230,11 @@ export default class Presentation extends React.Component {
               <li>En gammel/vanlig. Konstruktør måten</li>
               <li>Ny, mindre vanlig. JavaScript class fields</li>
               <li>Brukes til lokal tilstand</li>
+              <li>Funksjonskomponenter kan ikke ha lokal state</li>
             </ol>
           </Notes>
           <HeadingLarge>2 måter å sette State</HeadingLarge>
-          <CodePane margin="20px auto" style={{fontSize: "1.2rem"}} lang="javascript" source={require('raw-loader!../assets/react-state1.example')} />
+          <CodePane margin="20px auto" style={{fontSize: "1.4rem"}} lang="javascript" source={require('raw-loader!../assets/react-state1.example')} />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -258,7 +253,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <CodePane margin="20px auto" style={{fontSize: "1.2rem"}} lang="javascript" source={require('raw-loader!../assets/react-props.example')} />
+          <CodePane margin="20px auto" style={{fontSize: "1.6rem"}} lang="javascript" source={require('raw-loader!../assets/react-props.example')} />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -279,7 +274,7 @@ export default class Presentation extends React.Component {
               <li>Funksjoner er objekter i praksis. Kan sette properties på de</li>
             </ol>
           </Notes>
-          <CodePane margin="20px auto" style={{fontSize: "1.2rem"}} lang="javascript" source={require('raw-loader!../assets/react-proptypes.example')} />
+          <CodePane margin="20px auto" style={{fontSize: "1.5rem"}} lang="javascript" source={require('raw-loader!../assets/react-proptypes.example')} />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -329,7 +324,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <HeadingMedium textColor="tertiary">Initiell app</HeadingMedium>
-          <CodePane margin="20px auto" style={{fontSize: "1.2rem"}} lang="javascript" source={require('raw-loader!../assets/todo-initial.example')} />
+          <CodePane margin="20px auto" style={{fontSize: "1.8rem"}} lang="javascript" source={require('raw-loader!../assets/todo-initial.example')} />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
@@ -384,10 +379,213 @@ export default class Presentation extends React.Component {
             <ListItem textSize="2.2rem"><CodeSmall>todo</CodeSmall> skal være et slikt objekt:<br/> <CodeSmall>{"{ id: 1, title: 'My todo', complete: false }"}</CodeSmall></ListItem>
             <br />
             <ListItem textSize="2.2rem"><CodeSmall>{'<Todo />'}</CodeSmall> sine props skal bestå av en <CodeSmall>todo</CodeSmall>. Bytt ut hardkodet todo tittel med verdi fra <CodeSmall>props</CodeSmall></ListItem>
+            <br />
+            <ListItem textSize="2.2rem"><CodeSmall>{'<input type="checkbox" />'}</CodeSmall> må få en <CodeSmall>{'checked'}</CodeSmall> attributt. Verdien til attributten skal være <CodeSmall>{'complete'} property'en fra todo</CodeSmall></ListItem>
           </List>
           <br />
           <TextSmall textSize="1.7rem">Hint: husk {'{ }'} for å sende inn JavaScript verdier på props</TextSmall>
         </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Når man klikker og skriver</li>
+              <li>Hvordan mappes det til React</li>
+            </ol>
+          </Notes>
+          <HeadingLarge textColor="secondary">Events</HeadingLarge>
+          <HeadingMedium>HTML "trigger" mange events</HeadingMedium>
+          <CodeSmall>click, change, focus, blur etc..</CodeSmall>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Hvordan ser det ut i kode?</li>
+            </ol>
+          </Notes>
+          <CodePane margin="20px auto" style={{fontSize: "2rem"}} lang="javascript" source={require('raw-loader!../assets/react-events.example')} />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Et barn som tar inn props</li>
+              <li>En parent med lokalt state tar i bruk komponenten</li>
+              <li>Sender inn sine endringsfunksjoner som props</li>
+              <li>.bind(this) ikke i scope, må bare bruke</li>
+              <li>setState, React fn for å oppdatere React state</li>
+              <li>e: Event. target er DOM node. value er verdien fra elementet</li>
+            </ol>
+          </Notes>
+          <CodePane margin="20px auto" style={{fontSize: "1.4rem"}} lang="javascript" source={require('raw-loader!../assets/react-events2.example')} />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <HeadingMedium>Oppsummert</HeadingMedium>
+          <List ordered textSize="1rem" textAlign="center">
+            <ListItem textSize="2.2rem">Klassekomponent med lokalt state</ListItem>
+            <br />
+            <ListItem textSize="2.2rem">Tar i bruk en stateless funksjonell komponent</ListItem>
+            <br />
+            <ListItem textSize="2.2rem"><CodeSmall>setState</CodeSmall> for å oppdatere React state</ListItem>
+            <br />
+            <ListItem textSize="2.2rem">Må ha <CodeSmall>.bind(this)</CodeSmall> på komponent func for å beholde kontekst</ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <HeadingMedium textColor="secondary">Oppgaverunde!!!</HeadingMedium>
+          <br/>
+          <List ordered textSize="1rem" textAlign="center">
+            <ListItem textSize="2.2rem">Lag en <CodeSmall>{'handleUpdateTitle'}</CodeSmall> funksjon i <CodeSmall>{'<TodoList />'}</CodeSmall> må gjøres om til klassekomponent hvis den ikke er det</ListItem>
+            <br />
+            <ListItem textSize="2.2rem">Oppdater <CodeSmall>todo</CodeSmall> på state via <CodeSmall>setState</CodeSmall>. <CodeSmall>title</CodeSmall> skal settes til verdien av <CodeSmall>e.target.value</CodeSmall></ListItem>
+            <br/>
+            <ListItem textSize="2.2rem"><CodeSmall>{'<Todo />'}</CodeSmall> må utvide sine props til å ta inn en funksjon på  <CodeSmall>updateTitle</CodeSmall></ListItem>
+            <br/>
+            <ListItem textSize="2.2rem">Send inn <CodeSmall>handleUpdateTitle</CodeSmall> til <CodeSmall>{'<Todo />'}</CodeSmall> komponenten.</ListItem>
+            <br/>
+            <ListItem textSize="2.2rem">Legg til <CodeSmall>onChange</CodeSmall> som attributt på tekstfeltet og bruk funksjonen der.</ListItem>
+          </List>
+          <TextSmall textSize="1.7rem">Hint: Husk <CodeSmall textSize="1.7rem">.bind(this)</CodeSmall></TextSmall>
+          <TextSmall textSize="1.7rem">Hint2: Todo er et objekt på state. For å oppdatere: <br/><CodeSmall textSize="1.7rem">{'{ todo: { feltNavnHer: verdiHer } }'}</CodeSmall></TextSmall>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <HeadingMedium>Samme for checkbox</HeadingMedium>
+          <CodePane margin="20px auto" style={{fontSize: "1.2rem"}} lang="javascript" source={require('raw-loader!../assets/onclick.example')} />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Vis feilen hvor vi skriver over objektet</li>
+            </ol>
+          </Notes>
+          <HeadingMedium>Da har vi en todo vi kan endre på</HeadingMedium>
+          <br/>
+          <HeadingMedium>Og riktig nok inkorrekt</HeadingMedium>          
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Vis feilen hvor vi skriver over objektet</li>
+            </ol>
+          </Notes>
+          <HeadingLarge textColor="secondary">Next up: Liste av todos</HeadingLarge>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="secondary">
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Endre initiell state</li>
+              <li>Gjør mapping i render</li>
+              <li>Så se key warning i console</li>
+            </ol>
+          </Notes>
+          <List ordered textSize="1rem" textAlign="center">
+            <ListItem textSize="2.2rem">Initiell state må bli til en liste. Gjerne med en default todo</ListItem>
+            <br />
+            <ListItem textSize="2.2rem">Må endre i <CodeSmall>{'<TodoList />'}</CodeSmall> render for å mappe listen av todos til en liste av <CodeSmall>{'<Todo />'}</CodeSmall></ListItem>
+          </List>
+          <HeadingMedium>Live code!</HeadingMedium>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Hva er DOM.</li>
+              <li>Modell av html elementene. Vis i console elements</li>
+              <li>Før virtual dom. Oppdatere lister tregt</li>
+              <li>Måtte rendre ut hele listen på nytt</li>
+              <li>React bruker key til å se og oppdatere kun endringer</li>
+              <li>VDOM bygger opp dom i minne og differ</li>
+            </ol>
+          </Notes>
+          <HeadingLarge>Virtual DOM</HeadingLarge>
+          <List ordered textSize="1rem" textAlign="center">
+            <br/>
+            <ListItem textColor="primary">Store endringer i DOM tregt</ListItem>
+            <br/>
+            <ListItem textColor="primary">Tar alle komponenente og bygger opp DOM i minne</ListItem>
+            <br/>
+            <ListItem textColor="primary">Differ etter hver oppdatering</ListItem>
+            <br/>
+            <ListItem textColor="primary">Mye bedre performance</ListItem>
+            <br/>
+            <ListItem textColor="primary">Hvordan fikse problemet vårt?</ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Live code key fix.</li>
+            </ol>
+          </Notes>
+          <CodePane margin="20px auto" style={{fontSize: "2rem"}} lang="javascript" source={require('raw-loader!../assets/react-key.example')} />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <HeadingLarge>Add todos</HeadingLarge>
+          <CodePane margin="20px auto" style={{fontSize: "1.8rem"}} lang="javascript" source={require('raw-loader!../assets/react-button.example')} />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Forklar js syntaks.</li>
+            </ol>
+          </Notes>
+          <HeadingLarge>Oppgaverunde!!!!</HeadingLarge>
+          <List ordered textSize="1rem" textAlign="center">
+            <br/>
+            <ListItem textColor="primary">I <CodeSmall textColor="primary" bgColor="grey">{'<TodoList />'}</CodeSmall>, legg inn <CodeSmall textColor="primary" bgColor="grey">button</CodeSmall> fra forrige slide under <CodeSmall textColor="primary" bgColor="grey">{'</ul>'}</CodeSmall></ListItem>
+            <br/>
+        <ListItem textColor="primary">Man kan kun returnere ett element fra en React komponent, så legg <CodeSmall textColor="primary" bgColor="grey">{'<div></div>'}</CodeSmall> tagger rundt listen og knappen</ListItem>
+            <br/>
+            <ListItem textColor="primary">Lag en tom <CodeSmall textColor="primary" bgColor="grey">addTodo</CodeSmall> funksjon oppe ved de andre funksjonene for klassen. Vi fyller inn sammen etterpå</ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+        <HeadingLarge>Det nærmer seg</HeadingLarge>
+        <HeadingMedium textColor="primary">Gjenstående:</HeadingMedium>
+        <List ordered textSize="1rem" textAlign="center">
+            <br/>
+            <ListItem textColor="primary">Update title må få inn todo id</ListItem>
+            <br/>
+        <ListItem textColor="primary">Toggle complete må få inn todo id</ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+        <Notes>
+            <h4>Notes</h4>
+            <ol>
+        <li>map todos i update title, ta inn id og value</li>
+        <li>map todos i toggle complete, ta inn id</li>
+        <li>husk complete class name på li hvis todo complete</li>
+            </ol>
+          </Notes>
+        <HeadingLarge>Live code</HeadingLarge>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+        <HeadingLarge>Ferdig!</HeadingLarge>
+        <HeadingMedium textColor="primary">Hva er klokka?</HeadingMedium>
+      </Slide>
       </Deck>
     );
   }

@@ -1,0 +1,24 @@
+// Klasse som parent
+
+class MyComponent extends React.Component {
+  state = { value: '' };
+
+  handleChange(e){
+    this.setState({ value: e.target.value });
+  }
+
+  render(){
+    return <TextField value={this.state.value} valueChanged={this.handleChange.bind(this)} />;
+  }
+}
+
+// Funksjonskomponent som child
+
+const TextField = props =>
+  <input type="text" value={props.value} onChange={props.valueChanged} />;
+
+TextField.propTypes = {
+  valueChanged: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired
+};
+

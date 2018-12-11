@@ -1,0 +1,7 @@
+<ul className="myList">
+  <li key="unique-id-1">Item 1</li>  
+  <li key="unique-id-2">Item 1</li>  
+  <li key="unique-id-3">Item 1</li>  
+  <li key="unique-id-4">Item 1</li>
+  <li key="unique-id-5">Item 1</li>  
+</ul>

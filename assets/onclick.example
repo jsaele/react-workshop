@@ -1,0 +1,29 @@
+class TodoList extends React.Component {
+  state = {
+    todo: {
+      id: 1,
+      complete: false,
+      title: "My todo"
+    }
+  };
+
+  handleToggleComplete() {
+    this.setState({ todo: { complete: !this.state.todo.complete } });
+  }
+
+  handleUpdateTitle(e) {
+    this.setState({ todo: { title: e.target.value } });
+  }
+
+  render() {
+    return (
+      <ul>
+        <Todo
+          todo={this.state.todo}
+          toggleComplete={this.handleToggleComplete.bind(this)}
+          updateTitle={this.handleUpdateTitle.bind(this)}
+        />
+      </ul>
+    );
+  }
+}

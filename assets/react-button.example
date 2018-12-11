@@ -1,0 +1,1 @@
+<button onClick={this.addTodo.bind(this)}>Add todo</button>
