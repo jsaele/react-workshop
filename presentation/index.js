@@ -590,6 +590,3 @@ export default class Presentation extends React.Component {
     );
   }
 }
-// I MORRA: Etter siste refaktorering. Slides om changehandlers. Så oppgave. Så rendre liste, slides om virtual dom, så oppgave. Så vise update for eine. Så oppgave for andre. Så ca ferdig?
-// TODO: Sammenligne react med nokke anna?
-// TODO: Backup concepts
